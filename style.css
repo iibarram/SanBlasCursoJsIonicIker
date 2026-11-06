@@ -1,0 +1,155 @@
+/* Configuración general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f6;
+    color: #333;
+}
+
+/* Cabecera */
+
+header {
+    background-color: #1e293b;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+/* Menú principal */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+/* Enlaces del menú */
+
+.menu li a,
+.menu summary {
+    display: block;
+    padding: 14px 22px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* Efecto al pasar el ratón */
+
+.menu li a:hover,
+.menu summary:hover {
+    background-color: #3b82f6;
+}
+
+/* Submenú */
+
+.submenu {
+    position: relative;
+}
+
+.submenu details {
+    position: relative;
+}
+
+.menu summary {
+    list-style: none;
+}
+
+.menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.menu summary::after {
+    content: " ▼";
+    font-size: 11px;
+}
+
+/* Cuando se abre el submenú */
+
+.desplegable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 190px;
+    background-color: #1e293b;
+    list-style: none;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+}
+
+/* Opciones del submenú */
+
+.desplegable li a {
+    padding: 12px 18px;
+    border-radius: 0;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+}
+
+.desplegable li a:hover {
+    background-color: #3b82f6;
+    padding-left: 25px;
+}
+
+/* Contenido principal */
+
+main {
+    text-align: center;
+    margin-top: 100px;
+}
+
+main h2 {
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 18px;
+    color: #64748b;
+}
+
+/* Adaptación para móviles */
+
+@media (max-width: 700px) {
+
+    .menu {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu li a,
+    .menu summary {
+        width: 100%;
+    }
+
+    .desplegable {
+        position: static;
+        width: 100%;
+    }
+
+}

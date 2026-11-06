@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //con funciones
+        let simbolo;
+        let numero1;
+        let numero2;
+        let respuesta;
+        let msgOperacion;
+        respuesta= "no";
+            function pedirNumero(){
+                    numero = prompt("Introduce un número:");
+                    while(numero === null || numero.trim() === "" || isNaN(numero)) {
+                        numero = prompt("Numero incorrecto, introduzca un numero correcto:")
+                    }
+                return numero;
+            }
+            function pedirSimbolo(){
+                    simbolo = prompt("¿Que tipo de operación quieres hacer? Opciones= + - * / **:")
+                    while(!(simbolo == "+" || simbolo == "-" || simbolo == "*" || simbolo == "/" || simbolo == "**")) {
+                        simbolo = prompt("Simbolo incorrecto ¿Que tipo de operación quieres hacer? Opciones= + - * / **")
+                    }
+                return simbolo;
+            }
+            function hacerOperacion(num1, num2, simboloOp){
+                if(simboloOp == "+"){
+                    resultado = (+num1 + +num2);
+                    return(`${num1} + ${num2} = ${resultado}`);
+                }else if(simboloOp == "-"){
+                    resultado = (+num1 - +num2);
+                    return(`${num1} - ${num2} = ${resultado}`);
+                }else if(simboloOp == "*"){
+                    resultado = (+num1 * +num2);
+                    return(`${num1} * ${num2} = ${resultado}`);
+                }else if(simboloOp == "/"){
+                    resultado = (+num1 / +num2);
+                    return(`${num1} / ${num2} = ${resultado}`);
+                }else if(simboloOp == "**"){
+                    resultado = (num1 ** num2);
+                    return(`${num1} ** ${num2} = ${resultado}`);
+                }
+            }
+            numero1 = pedirNumero();
+            numero2 = pedirNumero();
+            simboloOperacion = pedirSimbolo();
+            msgOperacion = hacerOperacion(numero1, numero2, simboloOperacion);
+            alert(msgOperacion);
+
+            respuesta=prompt("¿Quieres hacer otra operación? si o no");
+            while(respuesta == undefined || !(respuesta == "si" || respuesta == "no")){
+                respuesta=prompt("El valor introducido no es valido, introduzca si o no:");
+                
+            }
+        while(respuesta== "si");
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 9</h1>
+</body>
+</html>

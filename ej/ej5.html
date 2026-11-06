@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*let message;
+
+            if (login == 'Empleado') {
+            message = 'Hola';
+            } else if (login == 'Director') {
+            message = 'Felicidades';
+            } else if (login == '') {
+            message = 'Sin sesión';
+            } else {
+            message = '';
+            }
+            */
+           let login;
+           login = prompt("Introduzca su usuario:");
+           let message = (login == 'Empleado') ? 'Hola' : (login == 'Director') ? 'Felicidades': (login == '') ? 'Sin sesión': '';
+           alert(message);
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 5</h1>
+</body>
+</html>

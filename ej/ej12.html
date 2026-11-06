@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //pasa esto a funciones flecha
+        /*
+            function ask(question, yes, no) {
+                if (confirm(question)) yes();
+                else no();
+            }
+
+            ask(
+                "Do you agree?",
+                function() { alert("You agreed."); },
+                function() { alert("You canceled the execution."); }
+            );
+        */
+
+
+
+        //resultado
+        "use strict";
+
+        let ask= (question, yes, no) =>{
+        if (confirm(question)) return yes();
+        else return no();
+        }
+
+        ask(
+        "Do you agree?",
+        () =>{ alert("You agreed."); },
+        () =>{ alert("You canceled the execution."); }
+        );
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 12</h1>
+</body>
+</html>

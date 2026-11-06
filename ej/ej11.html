@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*
+            Escriba la función pow(x,n) que devuelva x como potencia de n. 
+            O, en otras palabras, multiplique x por si mismo n veces y devuelva el resultado.
+        */
+       let resultado;
+       let numero1;
+       let numero2;
+       function pedirNumero(){
+                    numero = prompt("Introduce un número:");
+                    while(numero === null || numero.trim() === "" || isNaN(numero)|| numero == 0) {
+                        numero = prompt("Numero incorrecto, introduzca un numero correcto:")
+                    }
+                return numero;
+            }
+       function pow(x, n){
+        let resultado=1;
+            for(let y =0; y<=n; y++){
+                resultado= resultado*x;
+            }
+            alert(resultado);
+       }
+
+       numero1 = pedirNumero();
+       numero2 = pedirNumero();
+       resultado = pow(numero1, numero2);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 11</h1>
+</body>
+</html>

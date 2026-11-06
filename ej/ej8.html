@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //sin funciones
+        let simbolo;
+        let numero1;
+        let numero2;
+        let resultado;
+        let respuesta;
+        respuesta= "no";
+
+        do{
+            numero1=prompt("Introduce el primer número:");
+            while(numero === null || numero.trim() === "" || isNaN(numero)){
+                numero1=prompt("El valor introducido no es valido, introduzca un número valido:");
+            }
+
+            numero2=prompt("Introduce el segundo número:");
+            while(numero === null || numero.trim() === "" || isNaN(numero)){
+                numero2=prompt("El valor introducido no es valido, introduzca un número valido:");
+            }
+
+            simbolo = prompt("¿Que tipo de operación quieres hacer? Opciones= + - * / **:")
+            while(!(simbolo == "+" || simbolo == "-" || simbolo == "*" || simbolo == "/" || simbolo == "**")){
+                simbolo = prompt("Simbolo incorrecto ¿Que tipo de operación quieres hacer? Opciones= + - * / **")
+            }
+
+            if(simbolo == "+"){
+                resultado = (+numero1 + +numero2);
+                alert(`${numero1} + ${numero2} = ${resultado}`);
+            }else if(simbolo == "-"){
+                resultado = (+numero1 - +numero2);
+                alert(`${numero1} - ${numero2} = ${resultado}`);
+            }else if(simbolo == "*"){
+                resultado = (+numero1 * +numero2);
+                alert(`${numero1} * ${numero2} = ${resultado}`);
+            }else if(simbolo == "/"){
+                resultado = (+numero1 / +numero2);
+                alert(`${numero1} / ${numero2} = ${resultado}`);
+            }else if(simbolo == "**"){
+                resultado = (numero1 ** numero2);
+                alert(`${numero1} ** ${numero2} = ${resultado}`);
+            }
+
+            respuesta=prompt("¿Quieres hacer otra operación? si o no");
+            while(respuesta == undefined || !(respuesta == "si" || respuesta == "no")){
+                respuesta=prompt("El valor introducido no es valido, introduzca si o no:");
+                
+            }
+        }
+        while(respuesta== "si");
+        
+        
+        
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 8</h1>
+</body>
+</html>
