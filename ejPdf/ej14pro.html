@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Diómetro</title>
+</head>
+<body>
+
+<h1>Días del mes</h1>
+<h2>El mes de <spam id="mes"></spam> del año <spam id="anho"></spam> tiene <spam id=dias></spam> días.</h2>
+
+<script>
+function bisiesto(anho){
+    let divisible4   = false;
+    let divisible400 = false;
+    let termina00    = false;
+    let dias         = null;
+
+    divisible4   = anho%4   == 0 ? true : false;
+    divisible400 = anho%400 == 0 ? true : false; 
+    termina00    = anho%100 == 0 ? true : false;
+
+    if ((divisible4 && !termina00) || (termina00 && divisible400)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function nombreMes(mes){
+    let nombre = null;
+    switch (Number(mes)){
+        case 1:
+            nombre = 'enero';
+            break;
+        case 2:
+            nombre = 'febrero';
+            break;
+        case 3:
+            nombre = 'marzo';
+            break;
+        case 4:
+            nombre = 'abril';
+            break;
+        case 5:
+            nombre = 'mayo';
+            break;
+        case 6:
+            nombre = 'junio';
+            break;
+        case 7:
+            nombre = 'julio';
+            break;
+        case 8:
+            nombre = 'agosto';
+            break;
+        case 9:
+            nombre = 'septiembre';
+            break;
+        case 10:
+            nombre = 'octubre';
+            break;
+        case 11:
+            nombre = 'noviembre';
+            break;
+        case 12:
+            nombre = 'diciembre';
+    }
+    return nombre;
+}
+
+let anho, mes, dias;
+
+anho = window.prompt("Introduce un año", "0");
+anho = parseInt(anho);
+mes  = prompt("Introduce el número del mes (1-12)","1")
+mes  = Number(mes)
+
+// Comprobar si el año es bisiesto
+if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes ==10 || mes == 12){
+    dias = 31;
+} else if (mes == 2 && bisiesto(anho)){
+    dias = 29;
+} else if (mes == 2){
+    dias = 28;
+} else {
+    dias = 30;
+}
+
+document.getElementById("anho").innerHTML = String(anho);
+textoMes = nombreMes(String(mes));
+document.getElementById("mes").innerHTML  = textoMes;
+document.getElementById("dias").innerHTML = String(dias);
+
+</script>
+
+</body>
+</html>
