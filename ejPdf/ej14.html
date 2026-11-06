@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        /*Realizar programa en el que el usuario introduce el número del mes
+        (1 al 12) y el código responde si ese mes tiene 30 o 31 dias.*/
+        // Meses con 31 días: 1 (enero), 3 (marzo), 5 (mayo), 7 (julio), 8 (agosto), 10 (octubre), 12 (diciembre).
+        // Meses con 30 días: 4 (abril), 6 (junio), 9 (septiembre), 11 (noviembre).
+        // Meses que no tienen ni 30 ni 31 días: 2 (febrero), que tiene 28 o 29 días.
+        const meses = [
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+            'Agosto',
+            'Septiembre',
+            'Octubre',
+            'Noviembre',
+            'Diciembre'
+        ];
+        function pedirNumero(){
+                    let numero = prompt("Introduce el número del mes (1-12):");
+                    while(numero === null || numero.trim() === "" || isNaN(numero)|| numero == 0 || !(numero >= 1 && numero <=12 )) {
+                        numero = prompt("Numero de mes incorrecto, introduzca un numero de mes correcto (1-12):")
+                    }
+                return Number(numero);
+            }
+        function calcularDiasDelMes(mes){
+            switch(mes){
+                //se que se puede hacer facil, pero lo quiero personalizado, un case por mes
+                case 1: return `${meses[0]} tiene 31 dias.`;
+                case 2: return `${meses[1]} tiene 28 o 29 dias.`;
+                case 3: return `${meses[2]} tiene 31 dias.`;
+                case 4: return `${meses[3]} tiene 30 dias.`;
+                case 5: return `${meses[4]} tiene 31 dias.`;
+                case 6: return `${meses[5]} tiene 30 dias.`;
+                case 7: return `${meses[6]} tiene 31 dias.`;
+                case 8: return `${meses[7]} tiene 31 dias.`;
+                case 9: return `${meses[8]} tiene 30 dias.`;
+                case 10: return `${meses[9]} tiene 31 dias.`;
+                case 11: return `${meses[10]} tiene 30 dias.`;
+                case 12: return `${meses[11]} tiene 31 dias.`;
+            }
+        }
+        let numeroMes= pedirNumero();
+        let resultado = calcularDiasDelMes(numeroMes);
+        alert(resultado);
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 14 pdf</h1>
+</body>
+</html>
