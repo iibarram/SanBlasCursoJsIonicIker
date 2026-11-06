@@ -8,6 +8,7 @@
     <script>
         let numeroAleatorio=Math.floor(Math.random() * 101);
         let numeroUsuario;
+        let numIntentos=0;
         /*do {
             numeroUsuario = parseInt(prompt("Adivina el número (0-10):"));
         } while (numeroUsuario !== numeroAleatorio);
@@ -31,10 +32,15 @@
                 document.getElementById("resultado").textContent = "Correcto";
                 document.getElementById("resultado").classList.add("correcto");
                 medidorCalienteFrio(numeroAleatorio, respuesta);
+                ++numIntentos
+                document.getElementById("numIntentos").textContent = numIntentos;
             } else {
                 document.getElementById("resultado").textContent = "Incorrecto";
                 document.getElementById("resultado").classList.add("incorrecto");
                 medidorCalienteFrio(numeroAleatorio, respuesta);
+                ++numIntentos
+                document.getElementById("numIntentos").textContent = numIntentos;
+
             }
         }
     </script>
@@ -44,6 +50,7 @@
     <input type="text" id="respuesta">
     <button onclick="comprobar()">Enviar</button>
     <p id="resultado"></p>
+    <p>Número de intentos: <spam id="numIntentos"></spam></p>
     <p id="calienteFrio"></p>
 </body>
 </html>
