@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos0a100.css">
+    <script>
+        let numeroAleatorio=Math.floor(Math.random() * 101);
+        let numeroUsuario;
+        /*do {
+            numeroUsuario = parseInt(prompt("Adivina el número (0-10):"));
+        } while (numeroUsuario !== numeroAleatorio);
+        alert("¡Correcto! El número era " + numeroAleatorio);
+        */
+       function comprobar() {
+            document.getElementById("resultado").classList.remove("correcto", "incorrecto");
+            let respuesta = document.getElementById("respuesta").value;
+            function medidorCalienteFrio(numRandom, numUser){
+                if(numUser<numRandom){
+                    document.getElementById("calienteFrio").textContent = "Más";
+                }
+                else if(numUser==numRandom){
+                    document.getElementById("calienteFrio").textContent = "=";
+                }
+                else{
+                    document.getElementById("calienteFrio").textContent = "Menos";
+                }
+            }
+            if (respuesta == numeroAleatorio) {
+                document.getElementById("resultado").textContent = "Correcto";
+                document.getElementById("resultado").classList.add("correcto");
+                medidorCalienteFrio(numeroAleatorio, respuesta);
+            } else {
+                document.getElementById("resultado").textContent = "Incorrecto";
+                document.getElementById("resultado").classList.add("incorrecto");
+                medidorCalienteFrio(numeroAleatorio, respuesta);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>adivinar número</h1>
+    <input type="text" id="respuesta">
+    <button onclick="comprobar()">Enviar</button>
+    <p id="resultado"></p>
+    <p id="calienteFrio"></p>
+</body>
+</html>
