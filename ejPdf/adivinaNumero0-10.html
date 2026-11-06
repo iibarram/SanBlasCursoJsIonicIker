@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let numeroAleatorio=Math.floor(Math.random() * 11);
+        let numeroUsuario;
+        do {
+            numeroUsuario = parseInt(prompt("Adivina el número (0-10):"));
+        } while (numeroUsuario !== numeroAleatorio);
+        alert("¡Correcto! El número era " + numeroAleatorio);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
